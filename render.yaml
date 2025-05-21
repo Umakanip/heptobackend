@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: heptobackend
+    env: node
+    plan: free
+    branch: main
+    buildCommand: npm install
+    startCommand: node src/index.ts
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: DB_URL
+        value: "mssql://mssqldb:mssql@123@localhost:1433/jwtauth"
